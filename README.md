@@ -39,7 +39,7 @@ import OpenAI from 'openai';
 
 const client = new OpenAI({
   apiKey: 'sk-xxxxxx...',
-  baseURL: 'https://gacodeapi.com/v1'
+  baseURL: 'https://gaccodeapi.com/v1'
 });
 
 const response = await client.chat.completions.create({

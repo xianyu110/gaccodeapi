@@ -30,7 +30,7 @@ function copyCode(btn) {
 
 // 获取 Key 按钮
 function handleGetKey() {
-    alert('请联系客服获取 API Key\n\nRoute: gacodeapi.com');
+    alert('请联系客服获取 API Key\n\nRoute: gaccodeapi.com');
 }
 
 // 联系购买按钮
