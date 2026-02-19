@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI中转站 - GacCode API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🏠</span>
+                <span class="logo-text">GacCode API</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">核心优势</a></li>
+                <li><a href="#pricing">价格</a></li>
+                <li><a href="#docs">接入文档</a></li>
+                <li><a href="#models">支持模型</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+                <button class="btn-primary" onclick="handleGetKey()">立即获取 Key</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-badge">全网底价 · 企业级稳定</div>
+                <h1 class="hero-title">
+                    AI中转站
+                    <span class="hero-highlight">最优汇率</span>
+                </h1>
+                <p class="hero-desc">1.2元人民币 = 1美元额度，打通所有主流AI接口</p>
+                <p class="hero-sub">完全兼容 OpenAI / Claude Code 官方接口格式</p>
+                <div class="hero-btns">
+                    <button class="btn-primary btn-large" onclick="handleGetKey()">立即获取 Key</button>
+                    <button class="btn-secondary btn-large" onclick="handleContact()">联系购买</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">1.2:1</span>
+                        <span class="stat-label">人民币/美元</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">99.9%</span>
+                        <span class="stat-label">服务可用率</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">注册门槛</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <span class="window-title">接入示例 · Node.js</span>
+                        <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre class="code-body"><code><span class="c-keyword">import</span> OpenAI <span class="c-keyword">from</span> <span class="c-string">'openai'</span>;
+
+<span class="c-keyword">const</span> client = <span class="c-keyword">new</span> <span class="c-func">OpenAI</span>({
+  apiKey: <span class="c-string">'sk-xxxxxx...'</span>,
+  baseURL: <span class="c-string">'https://gacodeapi.com/v1'</span>
+});
+
+<span class="c-keyword">const</span> response = <span class="c-keyword">await</span> client.chat.completions.<span class="c-func">create</span>({
+  model: <span class="c-string">'claude-opus-4-5'</span>,
+  messages: [{ role: <span class="c-string">'user'</span>, content: <span class="c-string">'Hello!'</span> }]
+});
+
+console.<span class="c-func">log</span>(response.choices[<span class="c-num">0</span>].message.content);</code></pre>
+                </div>
+                <div class="route-info">
+                    <span class="route-label">Route:</span>
+                    <span class="route-value">gacodeapi.com/v1</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">核心优势</h2>
+                <p class="section-desc">为什么选择 GacCode API</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-num">01</div>
+                    <h3>极致汇率</h3>
+                    <p>1.2人民币兑换1美元额度，价格优势明显。每一分钱都花在刀刃上，让你的 AI 开发成本降到最低。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-num">02</div>
+                    <h3>稳定直连</h3>
+                    <p>企业级网络架构，拥有高速稳定的直连通道，确保服务质量，无需担心网络波动带来的影响。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <div class="feature-num">03</div>
+                    <h3>无需注册</h3>
+                    <p>100% 兼容 OpenAI 官方接口，仅需替换 API Key 和 BaseURL 即可开始使用，零学习成本。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <div class="feature-num">04</div>
+                    <h3>便捷支付</h3>
+                    <p>支持微信、支付宝等国内主流支付方式，无需外币卡，让每一位开发者都能轻松使用。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-num">05</div>
+                    <h3>零风险保障</h3>
+                    <p>余额不清零，按需充值，用多少充多少。专属客服团队，遇到问题随时响应解决。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <div class="feature-num">06</div>
+                    <h3>全模型覆盖</h3>
+                    <p>支持 Claude、GPT、Gemini 等全主流 AI 模型，一个 Key 搞定所有需求，无缝切换。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价格对比 -->
+    <section class="pricing" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">价格对比</h2>
+                <p class="section-desc">GacCode API vs 官方直充</p>
+            </div>
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>对比项目</th>
+                            <th>官方直充</th>
+                            <th class="highlight-col">GacCode API</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>每 $1 额度成本</td>
+                            <td>¥7.20+</td>
+                            <td class="highlight-col"><strong>¥1.20</strong></td>
+                        </tr>
+                        <tr>
+                            <td>支付方式</td>
+                            <td>外币信用卡</td>
+                            <td class="highlight-col"><strong>微信 / 支付宝</strong></td>
+                        </tr>
+                        <tr>
+                            <td>接口格式</td>
+                            <td>官方格式</td>
+                            <td class="highlight-col"><strong>完全兼容</strong></td>
+                        </tr>
+                        <tr>
+                            <td>服务保障</td>
+                            <td>无额外保障</td>
+                            <td class="highlight-col"><strong>专属客服</strong></td>
+                        </tr>
+                        <tr>
+                            <td>最低充值</td>
+                            <td>$5（≈¥36）</td>
+                            <td class="highlight-col"><strong>¥1 起充</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 接入文档 -->
+    <section class="docs" id="docs">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">快速接入</h2>
+                <p class="section-desc">三步完成接入，兼容所有主流框架</p>
+            </div>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-step">Step 1</div>
+                    <h3>获取 API Key</h3>
+                    <p>联系客服购买后获取专属 API Key</p>
+                    <div class="code-snippet">
+                        <code>sk-xxxxxxxxxxxxxxxx</code>
+                    </div>
+                </div>
+                <div class="doc-arrow">→</div>
+                <div class="doc-card">
+                    <div class="doc-step">Step 2</div>
+                    <h3>配置 BaseURL</h3>
+                    <p>将请求地址替换为 GacCode 节点</p>
+                    <div class="code-snippet">
+                        <code>https://gacodeapi.com/v1</code>
+                    </div>
+                </div>
+                <div class="doc-arrow">→</div>
+                <div class="doc-card">
+                    <div class="doc-step">Step 3</div>
+                    <h3>开始调用</h3>
+                    <p>其余代码无需修改，即刻享用</p>
+                    <div class="code-snippet">
+                        <code>console.log("AI Ready! 🚀")</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持模型 -->
+    <section class="models" id="models">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">支持模型</h2>
+                <p class="section-desc">覆盖全球主流大语言模型</p>
+            </div>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-provider">Anthropic</div>
+                    <div class="model-list">
+                        <span class="model-tag">claude-opus-4-5</span>
+                        <span class="model-tag">claude-sonnet-4-5</span>
+                        <span class="model-tag">claude-haiku-4-5</span>
+                        <span class="model-tag">claude-3-opus</span>
+                        <span class="model-tag">claude-3-sonnet</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-provider">OpenAI</div>
+                    <div class="model-list">
+                        <span class="model-tag">gpt-4o</span>
+                        <span class="model-tag">gpt-4o-mini</span>
+                        <span class="model-tag">gpt-4-turbo</span>
+                        <span class="model-tag">gpt-3.5-turbo</span>
+                        <span class="model-tag">o1</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-provider">Google</div>
+                    <div class="model-list">
+                        <span class="model-tag">gemini-2.0-flash</span>
+                        <span class="model-tag">gemini-1.5-pro</span>
+                        <span class="model-tag">gemini-1.5-flash</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>准备好开始了吗？</h2>
+            <p>加入数千名开发者，以最低成本使用顶级 AI 模型</p>
+            <div class="cta-btns">
+                <button class="btn-primary btn-large" onclick="handleGetKey()">立即获取 Key</button>
+                <button class="btn-outline btn-large" onclick="handleContact()">联系客服</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="logo-icon">🏠</span>
+                <span class="logo-text">GacCode API</span>
+                <p>全网底价 AI 中转服务</p>
+            </div>
+            <div class="footer-right">
+                <p>Route: gacodeapi.com</p>
+                <p>© 2025 GacCode API. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
