@@ -674,6 +674,49 @@ body {
     gap: 16px;
 }
 
+.qr-block {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.qr-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.qr-card:hover {
+    border-color: rgba(0, 180, 216, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 180, 216, 0.12);
+    transform: translateY(-3px);
+}
+
+.qr-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.qr-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.qr-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
 /* ===== 页脚 ===== */
 footer {
     padding: 36px 40px;
